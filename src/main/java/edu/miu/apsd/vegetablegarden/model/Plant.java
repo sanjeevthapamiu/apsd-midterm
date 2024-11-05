@@ -1,6 +1,7 @@
 package edu.miu.apsd.vegetablegarden.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,12 +19,15 @@ public class Plant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private Integer id;
 
+    @NotBlank(message = "Plant name cannot be blank")
+    @Column(nullable = false)
     private String name;
 
     private String type;
 
+    @Column(name = "plant_date")
     private LocalDate plantDate;
 
     @ManyToOne(fetch = FetchType.EAGER)
