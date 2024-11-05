@@ -40,7 +40,7 @@ public class Plant {
                 ", Name:" + name +
                 ", Type: " + type +
                 ", Plant Date: " + plantDate +
-                ", Garden: " + garden.getName() + "\n";
+                ", Garden: " + garden.getName();
     }
 
 

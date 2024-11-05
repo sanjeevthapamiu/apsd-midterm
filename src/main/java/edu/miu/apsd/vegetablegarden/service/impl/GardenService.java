@@ -14,8 +14,8 @@ public class GardenService {
 
     private final GardenRepository repository;
 
-    public void getAllGarden() {
-
+    public List<Garden> getAllGardens() {
+        return repository.findAll();
     }
 
     public void save(Garden garden) {

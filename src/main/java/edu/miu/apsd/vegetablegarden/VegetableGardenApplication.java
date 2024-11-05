@@ -41,6 +41,15 @@ public class VegetableGardenApplication {
             garden2.addPlant(plant3);
 
             gardenService.saveAll(List.of(garden1, garden2));
+
+            System.out.println("Gardens:");
+            gardenService.getAllGardens().forEach(System.out::println);
+
+            System.out.println("\nPlants (Sorted by Name):");
+            plantService.getAllPlantsSortedByName().forEach(System.out::println);
+
+            System.out.println("\nPlants (Sorted by Plant Date):");
+            plantService.getAllPlantsSortedByPlantDate().forEach(System.out::println);
         };
     }
 
