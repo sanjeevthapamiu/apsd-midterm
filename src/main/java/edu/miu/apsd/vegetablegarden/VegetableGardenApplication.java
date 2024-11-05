@@ -2,8 +2,8 @@ package edu.miu.apsd.vegetablegarden;
 
 import edu.miu.apsd.vegetablegarden.model.Garden;
 import edu.miu.apsd.vegetablegarden.model.Plant;
-import edu.miu.apsd.vegetablegarden.service.impl.GardenService;
-import edu.miu.apsd.vegetablegarden.service.impl.PlantService;
+import edu.miu.apsd.vegetablegarden.service.GardenService;
+import edu.miu.apsd.vegetablegarden.service.PlantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
