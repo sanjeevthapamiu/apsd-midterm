@@ -30,11 +30,12 @@ public class GardenService {
         return repository.findByName(name);
     }
 
-    public void update(String name, Garden garden) {
-        getByName(name).ifPresent(p -> repository.save(garden));
+    public void update(Garden garden) {
+        repository.findById(garden.getId())
+                .ifPresent(p -> repository.save(garden));
     }
 
-    public void delete(String name) {
+    public void deleteByName(String name) {
         getByName(name).ifPresent(repository::delete);
     }
 

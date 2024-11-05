@@ -22,6 +22,10 @@ public class PlantService {
         return repository.findAllByOrderByPlantDate();
     }
 
+    public List<Plant> getAllPlants() {
+        return repository.findAll();
+    }
+
     public void save(Plant plant) {
         repository.save(plant);
     }
@@ -30,11 +34,12 @@ public class PlantService {
         return repository.findByName(name);
     }
 
-    public void update(String name, Plant plant) {
-        getByName(name).ifPresent(p -> repository.save(plant));
+    public void update(Plant plant) {
+        repository.findById(plant.getId())
+                .ifPresent(p -> repository.save(plant));
     }
 
-    public void delete(String name) {
+    public void deleteByName(String name) {
         getByName(name).ifPresent(repository::delete);
     }
 }

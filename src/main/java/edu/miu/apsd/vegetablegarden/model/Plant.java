@@ -21,8 +21,8 @@ public class Plant {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @NotBlank(message = "Plant name cannot be blank")
-    @Column(nullable = false)
+    @NotBlank(message = "Plant name must not be blank")
+    @Column(unique = true, nullable = false)
     private String name;
 
     private String type;
@@ -49,5 +49,12 @@ public class Plant {
         this.name = name;
         this.type = type;
         this.plantDate = plantDate;
+    }
+
+    public Plant(String name, String type, LocalDate plantDate, Garden garden) {
+        this.name = name;
+        this.type = type;
+        this.plantDate = plantDate;
+        this.garden = garden;
     }
 }

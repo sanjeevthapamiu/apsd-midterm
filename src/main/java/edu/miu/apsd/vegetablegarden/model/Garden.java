@@ -24,13 +24,13 @@ public class Garden {
     private Integer id;
 
     @NotBlank(message = "Garden Name must not be blank")
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String name;
 
     private Double size;
 
     @OneToMany(mappedBy = "garden", cascade = CascadeType.ALL)
-    private final List<Plant> plants = new ArrayList<>();
+    private List<Plant> plants;
 
     @Override
     public String toString() {
@@ -46,12 +46,12 @@ public class Garden {
         this.size = size;
     }
 
-    public void addPlant(Plant plant) {
-        plant.setGarden(this);
-        plants.add(plant);
-    }
-
-    public void addPlant(Plant... plants) {
-        Arrays.stream(plants).forEach(this::addPlant);
-    }
+//    public void addPlant(Plant plant) {
+//        plant.setGarden(this);
+//        plants.add(plant);
+//    }
+//
+//    public void addPlant(Plant... plants) {
+//        Arrays.stream(plants).forEach(this::addPlant);
+//    }
 }
