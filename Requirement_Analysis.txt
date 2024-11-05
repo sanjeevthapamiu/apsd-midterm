@@ -1,0 +1,10 @@
+Vegetable garden is a console application to manage vegetable garden data
+
+System should be able to:
+    - Store Garden Details (id, name, size)
+    - Store Plant Details (id, name, type, plantDate: date when plant was planted)
+    - Store the details of plant that a specific garden has
+    - Perform Create, Read, Update and Delete on Garden Details and Plant Details
+    - Display all Garden Details
+    - Display all Plant Details which is sorted by name
+    - Display all Plant Details which is sorted by plant date (date when plant was planted)
