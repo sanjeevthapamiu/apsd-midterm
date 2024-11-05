@@ -13,7 +13,8 @@ public class PlantService {
 
     private final PlantRepository repository;
 
-    public void create(Plant plant) {
+
+    public void save(Plant plant) {
         repository.save(plant);
     }
 

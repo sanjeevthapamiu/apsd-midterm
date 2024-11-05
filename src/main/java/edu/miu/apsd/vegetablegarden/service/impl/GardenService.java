@@ -5,6 +5,7 @@ import edu.miu.apsd.vegetablegarden.repository.GardenRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -13,8 +14,16 @@ public class GardenService {
 
     private final GardenRepository repository;
 
-    public void create(Garden garden) {
+    public void getAllGarden() {
+
+    }
+
+    public void save(Garden garden) {
         repository.save(garden);
+    }
+
+    public void saveAll(List<Garden> gardens) {
+        repository.saveAll(gardens);
     }
 
     public Optional<Garden> getByName(String name) {

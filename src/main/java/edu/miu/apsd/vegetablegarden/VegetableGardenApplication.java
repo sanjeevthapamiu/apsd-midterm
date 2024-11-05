@@ -26,8 +26,9 @@ public class VegetableGardenApplication {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(GardenRepository gardenRepository){
+    CommandLineRunner commandLineRunner(){
         return args -> {
+            // Add Data
             Garden garden1 = new Garden("Vegetable Patch", 50.00);
             Garden garden2 = new Garden("Herb Garden", 20.00);
 
@@ -39,7 +40,7 @@ public class VegetableGardenApplication {
             garden1.addPlant(plant1, plant2);
             garden2.addPlant(plant3);
 
-            gardenRepository.saveAll(List.of(garden1, garden2));
+            gardenService.saveAll(List.of(garden1, garden2));
         };
     }
 
